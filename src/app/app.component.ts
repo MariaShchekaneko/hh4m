@@ -1,3 +1,4 @@
+import { ActionPlannerPage } from './../pages/action-planner/action-planner';
 import { AuthService } from './../services/auth';
 import { SignupPage } from './../pages/signup/signup';
 import { SigninPage } from './../pages/signin/signin';
@@ -15,6 +16,7 @@ export class MyApp {
   rootPage: any = TabsPage;
   signinPage = SigninPage;
   signupPage = SignupPage;
+  actionplannerPage = ActionPlannerPage;
   isAuthenticated = false;
   @ViewChild('nav') nav: NavController;
 

@@ -1,5 +1,6 @@
+import { MyMealsPage } from './../my-meals/my-meals';
+import { ActionPlannerPage } from './../action-planner/action-planner';
 import { ChatPage } from './../chat/chat';
-import { FoodPlannerPage } from './../food-planner/food-planner';
 import { MyProgressPage } from './../my-progress/my-progress';
 import { LearningModulesPage } from './../learning-modules/learning-modules';
 import { TodayPage } from './../today/today';
@@ -14,7 +15,8 @@ export class TabsPage {
   todayPage = TodayPage;
   learningModulesPage = LearningModulesPage;
   myProgressPage = MyProgressPage;
-  foodPlannerPage = FoodPlannerPage;
-  chatPage = ChatPage
+  actionPlannerPage = ActionPlannerPage;
+  chatPage = ChatPage;
+  myMealsPage = MyMealsPage
 
 }

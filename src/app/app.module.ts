@@ -1,10 +1,15 @@
+import { MealsService } from './../services/meals.service';
+import { AddMealPage } from './../pages/add-meal/add-meal';
+import { MealPage } from './../pages/meal/meal';
+import { MyMealsPage } from './../pages/my-meals/my-meals';
+import { ActionPlannerService } from './../services/actionPlanner.service';
+import { ActionPlannerPage } from './../pages/action-planner/action-planner';
 import { AuthService } from './../services/auth';
 import { SigninPage } from './../pages/signin/signin';
 import { TodayPage } from './../pages/today/today';
 import { SignupPage } from './../pages/signup/signup';
 import { MyProgressPage } from './../pages/my-progress/my-progress';
 import { LearningModulesPage } from './../pages/learning-modules/learning-modules';
-import { FoodPlannerPage } from './../pages/food-planner/food-planner';
 import { ChatPage } from './../pages/chat/chat';
 import { TabsPage } from './../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,12 +25,15 @@ import { MyApp } from './app.component';
     MyApp,
     TabsPage,
     ChatPage,
-    FoodPlannerPage,
     LearningModulesPage,
     MyProgressPage,
     TodayPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    ActionPlannerPage,
+    MyMealsPage,
+    AddMealPage,
+    MealPage
   ],
   imports: [
     BrowserModule,
@@ -36,18 +44,23 @@ import { MyApp } from './app.component';
     MyApp,
     TabsPage,
     ChatPage,
-    FoodPlannerPage,
     LearningModulesPage,
     MyProgressPage,
     TodayPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    ActionPlannerPage,
+    MyMealsPage,
+    AddMealPage,
+    MealPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    ActionPlannerService,
+    MealsService
   ]
 })
 export class AppModule {}
