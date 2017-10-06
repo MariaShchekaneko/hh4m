@@ -1,3 +1,5 @@
+import { AddGoalPage } from './../pages/add-goal/add-goal';
+import { GoalPage } from './../pages/goal/goal';
 import { IonicStorageModule } from '@ionic/storage';
 import { MealsService } from './../services/meals.service';
 import { AddMealPage } from './../pages/add-meal/add-meal';
@@ -34,7 +36,9 @@ import { MyApp } from './app.component';
     ActionPlannerPage,
     MyMealsPage,
     AddMealPage,
-    MealPage
+    MealPage,
+    GoalPage,
+    AddGoalPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import { MyApp } from './app.component';
     ActionPlannerPage,
     MyMealsPage,
     AddMealPage,
-    MealPage
+    MealPage,
+    GoalPage,
+    AddGoalPage
   ],
   providers: [
     IonicStorageModule,
