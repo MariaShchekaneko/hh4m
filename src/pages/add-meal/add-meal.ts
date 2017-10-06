@@ -1,11 +1,11 @@
 import { MealsService } from './../../services/meals.service';
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
-//import { ToastController } from "ionic-angular";
-import { Camera } from "ionic-native";
+import { ToastController } from "ionic-angular";
+import { Camera, File, Entry, FileError } from "ionic-native";
 
 
-//declare var cordova: any;
+declare var cordova: any;
 
 @Component({
   selector: 'page-add-meal',
@@ -17,7 +17,8 @@ export class AddMealPage {
   imageUrl = '';
 
   constructor(
-              private mealsService: MealsService) {
+              private mealsService: MealsService,
+              private toastCtrl: ToastController) {
   }
 
   onSubmit(form: NgForm) {
@@ -35,12 +36,38 @@ export class AddMealPage {
     })
       .then(
         imageData => {
+          const currentName = imageData.replace(/^.*[\\\/]/, '');
+          const path = imageData.replace(/[^\/]*$/, '');
+          const newFileName = new Date().getUTCMilliseconds() + '.jpg';
+          File.moveFile(path, currentName, cordova.file.dataDirectory, newFileName)
+            .then(
+              (data: Entry) => {
+                this.imageUrl = data.nativeURL;
+                Camera.cleanup();
+                // File.removeFile(path, currentName);
+              }
+            )
+            .catch(
+              (err: FileError) => {
+                this.imageUrl = '';
+                const toast = this.toastCtrl.create({
+                  message: 'Could not save the image. Please try again',
+                  duration: 2500
+                });
+                toast.present();
+                Camera.cleanup();
+              }
+            );
           this.imageUrl = imageData;
         }
       )
       .catch(
         err => {
-          console.log(err);
+          const toast = this.toastCtrl.create({
+            message: 'Could not take the image. Please try again',
+            duration: 2500
+          });
+          toast.present();
         }
       );
   }

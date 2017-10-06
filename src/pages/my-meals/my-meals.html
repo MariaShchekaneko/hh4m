@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let meal of meals" (click)="onOpenMeal()">
+  <ion-card *ngFor="let meal of meals; let i=index" (click)="onOpenMeal(meal, i)">
     <img [src]="meal.imageUrl">
     <ion-card-content text-center>
       <ion-card-title>

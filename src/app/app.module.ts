@@ -1,3 +1,4 @@
+import { IonicStorageModule } from '@ionic/storage';
 import { MealsService } from './../services/meals.service';
 import { AddMealPage } from './../pages/add-meal/add-meal';
 import { MealPage } from './../pages/meal/meal';
@@ -37,7 +38,8 @@ import { MyApp } from './app.component';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,12 +57,14 @@ import { MyApp } from './app.component';
     MealPage
   ],
   providers: [
+    IonicStorageModule,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     ActionPlannerService,
-    MealsService
+    MealsService,
+    
   ]
 })
 export class AppModule {}
