@@ -2,7 +2,6 @@ import { GoalPage } from './../goal/goal';
 import { Goal } from './../../models/goal';
 import { AddGoalPage } from './../add-goal/add-goal';
 import { ActionPlannerService } from './../../services/actionPlanner.service';
-import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 

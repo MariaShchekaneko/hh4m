@@ -15,8 +15,8 @@ export class AddGoalPage {
 }
   onSubmit(form: NgForm) {
     this.actionPlannerService.addGoal(form.value.goalName, 
-                             form.value.barries,
-                             form.value.strategies);
+                             form.value.barrierName,
+                             form.value.strategyName);
    form.resetForm();
   
    }

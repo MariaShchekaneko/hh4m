@@ -1,25 +1,25 @@
 <ion-header>
-  
     <ion-navbar>
-      <ion-title></ion-title>
+      <ion-title>Your Goal</ion-title>
     </ion-navbar>
-  
-  </ion-header>
-  
-  
+  </ion-header>  
   <ion-content padding>
     <ion-grid>
+        <ion-row>
+            <ion-col text-center>
+              <p>{{ goal.goal }}</p>
+            </ion-col>
+          </ion-row>
       <ion-row>
         <ion-col text-center>
-          <p>{{ goal.goal }}</p>
+          <p>{{ goal.barriers }}</p>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <p>{{ goal.ba }}</p>
+        <ion-col text-center>
+          <p>{{ goal.strategies }}</p>
         </ion-col>
       </ion-row>
-    
       <ion-row>
         <ion-col>
           <button
