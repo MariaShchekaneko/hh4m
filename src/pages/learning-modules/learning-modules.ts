@@ -1,19 +1,30 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModulesByCategoryPage } from './../modules-by-category/modules-by-category';
+import { Component, OnInit } from '@angular/core';
+import { Module } from '../../data/module.interface';
+import modules from '../../data/modules';
+import {LearningModulePage} from '../../pages/learning-module/learning-module'
+import { ModalController } from 'ionic-angular';
 
 
-@IonicPage()
 @Component({
   selector: 'page-learning-modules',
   templateUrl: 'learning-modules.html',
 })
-export class LearningModulesPage {
+export class LearningModulesPage implements OnInit{
+  moduleCollection: {category: string, modules: Module[], icon: string}[];
+  modulesByCategoryPage = ModulesByCategoryPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController){}
+
+  ngOnInit() {
+    this.moduleCollection = modules;
+    
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LearningModulesPage');
-  }
-
+  /*onOpenModule(module: Module, index: number) {
+    const modal = this.modalCtrl.create(ModulesByCategoryPage, {module: module, index: index});
+    modal.present();
+    
+  }*/
+  
 }

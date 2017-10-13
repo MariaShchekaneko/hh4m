@@ -1,3 +1,5 @@
+import { ModulesByCategoryPage } from './../pages/modules-by-category/modules-by-category';
+import { LearningModulePage } from './../pages/learning-module/learning-module';
 import { AddGoalPage } from './../pages/add-goal/add-goal';
 import { GoalPage } from './../pages/goal/goal';
 import { IonicStorageModule } from '@ionic/storage';
@@ -20,9 +22,9 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { MyApp } from './app.component';
-
+import { LearningModulesService } from './../services/learningModules.service'
 @NgModule({
   declarations: [
     MyApp,
@@ -38,7 +40,9 @@ import { MyApp } from './app.component';
     AddMealPage,
     MealPage,
     GoalPage,
-    AddGoalPage
+    AddGoalPage,
+    LearningModulePage,
+    ModulesByCategoryPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,9 @@ import { MyApp } from './app.component';
     AddMealPage,
     MealPage,
     GoalPage,
-    AddGoalPage
+    AddGoalPage,
+    LearningModulePage,
+    ModulesByCategoryPage
   ],
   providers: [
     IonicStorageModule,
@@ -70,6 +76,8 @@ import { MyApp } from './app.component';
     AuthService,
     ActionPlannerService,
     MealsService,
+    StreamingMedia,
+    LearningModulesService
     
   ]
 })

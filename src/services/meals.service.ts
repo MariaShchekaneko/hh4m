@@ -28,10 +28,10 @@ export class MealsService {
         return this.meals.slice();
     }
     fetchMeals() {
-        return this.storage.get('places')
+        return this.storage.get('meals')
           .then(
-            (places: Meal[]) => {
-              this.meals = places != null ? places : [];
+            (meals: Meal[]) => {
+              this.meals = meals != null ? meals : [];
               return this.meals;
             }
           )
