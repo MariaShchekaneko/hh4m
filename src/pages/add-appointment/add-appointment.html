@@ -1,0 +1,59 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Appointment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-content padding>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-list>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-input 
+          type = "date"
+          name = "date"
+          ngModel
+          required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-input 
+          type = "time"
+          name = "time"
+          ngModel
+          required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Doctor</ion-label>
+          <ion-input name = "doctor"
+          ngModel
+          required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Notes</ion-label>
+          <ion-input name = "notes"
+          ngModel></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button
+              ion-button
+              color="secondary"
+              block
+              type="submit"
+              [disabled]="!f.valid">
+              Add Appointment
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+</ion-content>

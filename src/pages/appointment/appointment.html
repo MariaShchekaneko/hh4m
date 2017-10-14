@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ appointment.date }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>{{ appointment.time }}</p>
+        <p>{{ appointment.doctor }}</p>
+        <p>{{ appointment.notes }}</p>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <button
+          ion-button
+          block
+          (click)="onLeave()">Cancel</button>
+      </ion-col>
+      <ion-col>
+        <button
+          ion-button
+          block
+          color="danger"
+          (click)="onDelete()">Delete</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
