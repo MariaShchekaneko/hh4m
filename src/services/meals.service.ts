@@ -43,7 +43,7 @@ export class MealsService {
       deleteMeal(index: number) {
         const meal = this.meals[index];
         this.meals.splice(index, 1);
-        this.storage.set('places', this.meals)
+        this.storage.set('meals', this.meals)
           .then(
             () => {
               this.removeFile(meal);

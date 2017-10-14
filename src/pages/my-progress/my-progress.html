@@ -1,17 +1,66 @@
 <ion-header>
-
   <ion-navbar>
-      <ion-buttons left>
-          <button ion-button icon-only menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
-        </ion-buttons>
-    <ion-title>My Progress</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Me</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <button class="my_button"
+          ion-button
+          large
+          [navPush] = "myAppointmentsPage">
+          <div>
+            <ion-icon name = 'calendar'></ion-icon>
+            <br>
+            <label>Appointments</label>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="my_button"
+          ion-button
+          large
+          (click)="onRegisterWeight()">
+          <div>
+            <ion-icon name = 'stats'></ion-icon>
+            <br>
+            <label>My Weight</label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+        <button class="my_button" 
+          ion-button
+          large
+          (click)="onRegisterToDo()">
+          <div>
+            <ion-icon name = 'create'></ion-icon>
+            <br>
+            <label>To Do</label>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button class="my_button"
+          ion-button
+          large
+          (click)="onAddMyPhoto()">
+          <div>
+            <ion-icon name = 'images'></ion-icon>
+            <br>
+            <label>My Photos</label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

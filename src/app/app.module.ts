@@ -1,3 +1,7 @@
+import { AppointmentsService } from './../services/appointments.service';
+import { AppointmentPage } from './../pages/appointment/appointment';
+import { MyAppointmentsPage } from './../pages/my-appointments/my-appointments';
+import { AddAppointmentPage } from './../pages/add-appointment/add-appointment';
 import { ModulesByCategoryPage } from './../pages/modules-by-category/modules-by-category';
 import { LearningModulePage } from './../pages/learning-module/learning-module';
 import { AddGoalPage } from './../pages/add-goal/add-goal';
@@ -42,7 +46,10 @@ import { LearningModulesService } from './../services/learningModules.service'
     GoalPage,
     AddGoalPage,
     LearningModulePage,
-    ModulesByCategoryPage
+    ModulesByCategoryPage,
+    AddAppointmentPage,
+    MyAppointmentsPage,
+    AppointmentPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,10 @@ import { LearningModulesService } from './../services/learningModules.service'
     GoalPage,
     AddGoalPage,
     LearningModulePage,
-    ModulesByCategoryPage
+    ModulesByCategoryPage,
+    AddAppointmentPage,
+    MyAppointmentsPage,
+    AppointmentPage
   ],
   providers: [
     IonicStorageModule,
@@ -77,7 +87,8 @@ import { LearningModulesService } from './../services/learningModules.service'
     ActionPlannerService,
     MealsService,
     StreamingMedia,
-    LearningModulesService
+    LearningModulesService,
+    AppointmentsService
     
   ]
 })

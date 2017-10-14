@@ -2,6 +2,7 @@ import { MealsService } from './../../services/meals.service';
 import { Meal } from './../../models/meal';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Component } from '@angular/core';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-meal',
@@ -13,8 +14,9 @@ export class MealPage {
   index: number;
 
   constructor(public navParams: NavParams,
-  private viewCtrl: ViewController,
-  private mealsService: MealsService) {
+    private viewCtrl: ViewController,
+    private alertCtrl: AlertController,
+    private mealsService: MealsService) {
     this.meal = this.navParams.get('meal');
     this.index = this.navParams.get('index');
   }
@@ -23,8 +25,27 @@ export class MealPage {
   }
 
   onDelete() {
-    this.mealsService.deleteMeal(this.index);
-    this.onLeave();
+      const alert = this.alertCtrl.create ({
+      title: 'Remove Appointment',
+      message: 'Are you sure you want to remove this meal?',
+      buttons: [
+        {
+          text: 'Yes, go ahead',
+          handler: () => {
+            this.mealsService.deleteMeal(this.index);
+            this.onLeave();
+            console.log('Ok');
+          }
+        },
+        {
+          text: 'No, I changed my mind',
+          handler: () => {
+            console.log('Canceled');
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
