@@ -27,7 +27,7 @@
         <button class="my_button"
           ion-button
           large
-          (click)="onRegisterWeight()">
+          >
           <div>
             <ion-icon name = 'stats'></ion-icon>
             <br>
@@ -41,7 +41,7 @@
         <button class="my_button" 
           ion-button
           large
-          (click)="onRegisterToDo()">
+          [navPush] = "myToDosPage">
           <div>
             <ion-icon name = 'create'></ion-icon>
             <br>
@@ -53,7 +53,7 @@
         <button class="my_button"
           ion-button
           large
-          (click)="onAddMyPhoto()">
+          >
           <div>
             <ion-icon name = 'images'></ion-icon>
             <br>

@@ -53,31 +53,8 @@ fetchGoals() {
   }
 
   deleteGoal(index: number) {
-   // const goal = this.goals[index];
     this.goals.splice(index, 1);
     this.storage.set('goals', this.goals)
-      /*.then(
-        () => {
-          this.removeFile(goal);
-        }
-      )
-      .catch(
-        err => console.log(err)
-       );*/
+     
   }
-
- /* private removeFile(goal: Goal) {
-    const currentName = goal.imageUrl.replace(/^.*[\\\/]/, '');
-    File.removeFile(cordova.file.dataDirectory, currentName)
-      .then(
-        () => console.log('Removed File')
-      )
-      .catch(
-        () => {
-          console.log('Error while removing File');
-          this.addMeal(meal.title, meal.recipe, meal.imageUrl);
-        }
-      );
-  }*/
-
 }
