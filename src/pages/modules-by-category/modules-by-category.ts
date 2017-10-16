@@ -1,31 +1,38 @@
-import { NavParams } from 'ionic-angular';
-//import { LearningModulesService } from './../../services/learningModules.service';
-//import { LearningModulePage } from './../learning-module/learning-module';
+import { NavParams, ModalController } from 'ionic-angular';
+import { LearningModulesService } from './../../services/learningModules.service';
+import { LearningModulePage } from './../learning-module/learning-module';
 import { Module } from './../../data/module.interface';
 import { Component, OnInit } from '@angular/core';
-//import modules from '../../data/modules';
+import modules from '../../data/modules';
 
 @Component({
   selector: 'page-modules-by-category',
   templateUrl: 'modules-by-category.html',
 })
 export class ModulesByCategoryPage implements OnInit{
-  
+  module: Module[];
   learningModulesGroup: {category: string, modules: Module[], icon: string}[];
  
-  constructor(
-    private NavParams: NavParams,
-    //private learningModulesService: LearningModulesService
+  constructor(public modalCtrl: ModalController,
+              private NavParams: NavParams,
+    private learningModulesService: LearningModulesService
   ){}
 
   ngOnInit() {
     this.learningModulesGroup = this.NavParams.data;
   }
 
-  /*ionViewWillEnter(){
-    this.module = this.learningModulesService.getLearningModules();
-  }*/
-  onOpenModule(module: Module){
-   console.log('ok');
+  ionViewWillEnter(){
+   this.module = this.learningModulesService.getLearningModules();
   }
+  onOpenModule(module: Module){
+    const modal = this.modalCtrl.create(LearningModulePage, {module: module});
+    modal.present();
+    modal.onDidDismiss(
+      () => {
+        this.module = this.learningModulesService.getLearningModules();
+      }
+    );
+  }
+  
 }

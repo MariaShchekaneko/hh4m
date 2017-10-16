@@ -13,20 +13,20 @@
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <ion-list>
         <ion-item>
-          <ion-label>Date</ion-label>
-          <ion-input 
-          type = "date"
+          <ion-label fixed>Date</ion-label>
+          <ion-datetime
+          pickerFormat="MM/DD/YYYY"
           name = "date"
           ngModel
-          required></ion-input>
+          required></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label>Time</ion-label>
-          <ion-input 
-          type = "time"
+          <ion-datetime
+          pickerFormat="HH:mm"
           name = "time"
           ngModel
-          required></ion-input>
+          required></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label>Doctor</ion-label>

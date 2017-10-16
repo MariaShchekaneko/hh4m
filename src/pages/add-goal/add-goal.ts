@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, ToastController } from 'ionic-angular';
 import { ActionPlannerService } from './../../services/actionPlanner.service';
 import { NgForm } from "@angular/forms";
 
@@ -11,14 +11,20 @@ import { NgForm } from "@angular/forms";
 export class AddGoalPage {
 
   constructor(
-    private actionPlannerService: ActionPlannerService) {
+    private actionPlannerService: ActionPlannerService,
+    private toastCtrl: ToastController) {
 }
   onSubmit(form: NgForm) {
     this.actionPlannerService.addGoal(form.value.goalName, 
                              form.value.barrierName,
                              form.value.strategyName);
    form.resetForm();
-  
-   }
- 
+   const toast = this.toastCtrl.create({
+    message: 'Meal was added!',
+    duration: 2500,
+    position: 'middle'
+  });
+  toast.present();
+  }
+
 }

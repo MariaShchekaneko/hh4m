@@ -17,16 +17,16 @@ export class AppointmentsService {
                    doctor: string,
                    notes: string,
                    location: Location) {
-const appointment = new Appointment(date, time, doctor, notes, location);
-this.appointments.push(appointment);
-this.storage.set('appointments', this.appointments)
- .then()
- .catch(
-   err => {
-     this.appointments.splice(this.appointments.indexOf(appointment), 1);
-   }
- );
-}
+        const appointment = new Appointment(date, time, doctor, notes, location);
+        this.appointments.push(appointment);
+        this.storage.set('appointments', this.appointments)
+        .then()
+        .catch(
+          err => {
+            this.appointments.splice(this.appointments.indexOf(appointment), 1);
+          }
+        );
+        }
 
 loadAppointments() {
 return this.appointments.slice();

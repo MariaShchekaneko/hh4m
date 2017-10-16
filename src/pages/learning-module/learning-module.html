@@ -2,7 +2,7 @@
 <ion-header>
   
     <ion-navbar>
-      <ion-title>{{ id }}</ion-title>
+      <ion-title>{{ module.id }}</ion-title>
     </ion-navbar>
   
   </ion-header>
@@ -10,12 +10,10 @@
   <ion-content padding text-center>
     <ion-card>
       <ion-card-content>
-        {{ description }}
-        {{ videoUrl }}
+        {{ module.description }}
       </ion-card-content>
-      
     </ion-card>
-    <button ion-button (click)="onStartVideo()"Watch Video></button>
+    <button ion-button (click)="onStartVideo(module.videoUrl)">Watch Video</button>
     <button ion-button color="danger" (click)="onLeave()">Close</button>
   </ion-content>
   

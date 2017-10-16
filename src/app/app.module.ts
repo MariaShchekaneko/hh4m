@@ -1,3 +1,5 @@
+import { EditMedicalInfoPage } from './../pages/edit-medical-info/edit-medical-info';
+import { MyMedicalInfoPage } from './../pages/my-medical-info/my-medical-info';
 import { MyPhotosPage } from './../pages/my-photos/my-photos';
 import { AddPhotoPage } from './../pages/add-photo/add-photo';
 import { ToDoService } from './../services/toDo.service';
@@ -36,7 +38,8 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 import { MyApp } from './app.component';
 import { LearningModulesService } from './../services/learningModules.service';
 import { SetLocationPage } from "../pages/set-location/set-location";
-import { AgmCoreModule } from "angular2-google-maps/core"
+import { AgmCoreModule } from "angular2-google-maps/core";
+import { Storage } from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -64,7 +67,11 @@ import { AgmCoreModule } from "angular2-google-maps/core"
     ToDoPage,
     AddPhotoPage,
     MyPhotosPage,
-    SetLocationPage
+    SetLocationPage,
+    MyMedicalInfoPage,
+    EditMedicalInfoPage,
+    MyPhotosPage,
+    AddPhotoPage
   ],
   imports: [
     BrowserModule,
@@ -100,7 +107,11 @@ import { AgmCoreModule } from "angular2-google-maps/core"
     ToDoPage,
     AddPhotoPage,
     MyPhotosPage,
-    SetLocationPage
+    SetLocationPage,
+    MyMedicalInfoPage,
+    EditMedicalInfoPage,
+    MyPhotosPage,
+    AddPhotoPage
   ],
   providers: [
     IonicStorageModule,

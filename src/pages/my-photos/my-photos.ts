@@ -1,25 +1,37 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Photo } from './../../models/photo';
+import { AddPhotoPage } from './../add-photo/add-photo';
+import { ModalController } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
 
-/**
- * Generated class for the MyPhotosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-my-photos',
   templateUrl: 'my-photos.html',
 })
-export class MyPhotosPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+export class MyPhotosPage 
+//implements OnInit 
+{
+  addPhotoPage = AddPhotoPage;
+  photos: Photo[] = [];
+  constructor(public modalCtrl: ModalController,
+            //  private photosService: PhotosService
+            ){}
+ /* 
+  ngOnInit() {
+    this.photosService.fetchPhotos()
+      .then(
+        (photos: Photo[]) => this.photos = photos
+      );
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyPhotosPage');
+ ionViewWillEnter(){
+    this.photos = this.photosService.loadPhotos();
   }
-
+ onOpenPhoto(photo: Photo, index: number) {
+    const modal = this.modalCtrl.create(PhotoPage, {photo: photo, index: index});
+    modal.present();
+    modal.onDidDismiss(
+      () => {
+        this.photos = this.photosService.loadPhotos();
+      }
+    );
+  }*/
 }

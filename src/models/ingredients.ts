@@ -1,5 +1,5 @@
 export class Ingredients {
-    constructor (public ingredients: string[]) {
+    constructor (public ingredient: string) {
 
     }
 }

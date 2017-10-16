@@ -1,4 +1,4 @@
-//import { Module } from './../../models/module';
+import { Module } from './../../models/module';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media'
@@ -10,29 +10,26 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 })
 export class LearningModulePage {
 
-  id: string;
-  description: string;
+  module: Module; 
   videoUrl: string;
 
   constructor(public navParams: NavParams,
   private viewCtrl: ViewController,
   private steamingMedia: StreamingMedia
 ) {
-    this.id = this.navParams.get('id');
-    this.description = this.navParams.get('description');
-    this.videoUrl = this.navParams.get('videoUrl');
+  this.module = this.navParams.get('module');
   }
   onLeave() {
     this.viewCtrl.dismiss();
   }
 
-  onStartVideo(){
+  onStartVideo(videoUrl){
     let options: StreamingVideoOptions = {
       successCallback: () => {console.log()},
       errorCallback: () => {console.log()},
       orientation: 'landscape'
     };
-    this.steamingMedia.playVideo(this.videoUrl, options);
+    this.steamingMedia.playVideo(videoUrl, options);
   }
 
 }

@@ -1,3 +1,4 @@
+import { Ingredients } from './../models/ingredients';
 import { Meal } from './../models/meal';
 import { Storage } from '@ionic/storage';
 import { Injectable } from "@angular/core";

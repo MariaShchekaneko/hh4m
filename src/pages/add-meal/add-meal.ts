@@ -1,3 +1,4 @@
+import { Ingredients } from './../../models/ingredients';
 import { MealsService } from './../../services/meals.service';
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
@@ -13,7 +14,6 @@ declare var cordova: any;
 })
 export class AddMealPage {
   
-  
   imageUrl = '';
 
   constructor(
@@ -27,6 +27,12 @@ export class AddMealPage {
                             this.imageUrl);
   form.resetForm();
   this.imageUrl = '';
+  const toast = this.toastCtrl.create({
+    message: 'Meal was added!',
+    duration: 2500,
+    position: 'middle'
+  });
+  toast.present();
   }
 
   onTakePhoto() {
@@ -52,6 +58,7 @@ export class AddMealPage {
                 this.imageUrl = '';
                 const toast = this.toastCtrl.create({
                   message: 'Could not save the image. Please try again',
+                  position: 'middle',
                   duration: 2500
                 });
                 toast.present();
@@ -65,7 +72,8 @@ export class AddMealPage {
         err => {
           const toast = this.toastCtrl.create({
             message: 'Could not take the image. Please try again',
-            duration: 2500
+            duration: 2500,
+            position: 'middle'
           });
           toast.present();
         }
@@ -87,5 +95,6 @@ export class AddMealPage {
         this.imageUrl = imageData;
       }, 
       err => console.log(err));  
+      
   };
 }

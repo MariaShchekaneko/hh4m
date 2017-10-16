@@ -1,6 +1,6 @@
 import { SetLocationPage } from './../set-location/set-location';
 import { Location } from './../../models/location';
-import { ToastController } from 'ionic-angular';
+import { ToastController, AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { Appointment } from './../../models/appointment';
@@ -18,28 +18,35 @@ declare var cordova: any;
 export class AddAppointmentPage {
   
   location: Location = {
-    lat: 40.7624324,
+    lat:  40.7624324,
     lng: -73.9759827
   };
   locationIsSet = false;
   constructor(private modalCtrl: ModalController,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
-              private appointmentsService: AppointmentsService) {
+              private appointmentsService: AppointmentsService,
+              private alertCtrl : AlertController) {
   }
 
   onSubmit(form: NgForm) {
-   this.appointmentsService.addAppointment(form.value.date, 
-                                           form.value.time, 
-                                           form.value.doctor, 
-                                           form.value.notes,
-                                          this.location);
-  form.resetForm();
-  this.location = {
+  
+    this.appointmentsService.addAppointment(form.value.date, 
+      form.value.time, 
+      form.value.doctor, 
+      form.value.notes,
+     this.location);
+    form.resetForm();
+    this.location = {
     lat: 40.7624324,
     lng: -73.9759827
-  };
+    };
   this.locationIsSet = false;
+  const toast = this.toastCtrl.create({
+    message: 'Appointment was added!',
+    duration: 2500
+  });
+  toast.present();
 }
 onOpenMap() {
   const modal = this.modalCtrl.create(SetLocationPage,
@@ -73,8 +80,9 @@ onOpenMap() {
         error => {
           loader.dismiss();
           const toast = this.toastCtrl.create({
-            message: 'Could get location, please pick it manually!',
-            duration: 2500
+            message: 'Could not get location, please pick it manually!',
+            duration: 2500,
+            position: 'middle'
           });
           toast.present();
         }
