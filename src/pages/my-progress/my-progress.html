@@ -11,7 +11,7 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col col-6>
         <button class="my_button"
           ion-button
           [navPush] = "myAppointmentsPage">
@@ -22,7 +22,7 @@
           </div>
         </button>
       </ion-col>
-      <ion-col>
+      <ion-col col-6>
         <button class="my_button"
           ion-button
           [navPush] = "myWeightPage">
@@ -35,7 +35,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col col-6>
         <button class="my_button" 
           ion-button
           [navPush] = "myToDosPage">
@@ -46,7 +46,7 @@
           </div>
         </button>
       </ion-col>
-      <ion-col>
+      <ion-col col-6>
         <button class="my_button"
           ion-button
           [navPush] = "myPhotosPage">
@@ -54,17 +54,6 @@
             <ion-icon name = 'images'></ion-icon>
             <br>
             <label>My Photos</label>
-          </div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button class="my_button"
-          ion-button
-          [navPush] = "myMedicalInfo">
-          <div>
-            <ion-icon name = 'medkit'></ion-icon>
-            <br>
-            <label>My Medical Info</label>
           </div>
         </button>
       </ion-col>

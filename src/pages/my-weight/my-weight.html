@@ -17,11 +17,11 @@
 
 
 <ion-content padding>
-  <ion-card *ngFor="let weight of weights; let i=index" (click)="onOpenWeight(toDo, i)">
+  <ion-card *ngFor="let weight of weights; let i=index" (click)="onOpenWeight(weight, i)">
     
       <ion-card-content text-center>
         <ion-card-title>
-          {{ weight.weight }}
+          {{ weight.weight }}  {{ weight.unit }}
         </ion-card-title>
        
       </ion-card-content>
