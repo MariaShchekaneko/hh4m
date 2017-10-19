@@ -1,3 +1,7 @@
+import { WeightService } from './../services/weight.service';
+import { AddWeightPage } from './../pages/add-weight/add-weight';
+import { MyWeightPage } from './../pages/my-weight/my-weight';
+import { WeightPage } from './../pages/weight/weight';
 import { EditMedicalInfoPage } from './../pages/edit-medical-info/edit-medical-info';
 import { MyMedicalInfoPage } from './../pages/my-medical-info/my-medical-info';
 import { MyPhotosPage } from './../pages/my-photos/my-photos';
@@ -71,7 +75,10 @@ import { Storage } from "@ionic/storage";
     MyMedicalInfoPage,
     EditMedicalInfoPage,
     MyPhotosPage,
-    AddPhotoPage
+    AddPhotoPage,
+    WeightPage,
+    MyWeightPage,
+    AddWeightPage
   ],
   imports: [
     BrowserModule,
@@ -111,7 +118,10 @@ import { Storage } from "@ionic/storage";
     MyMedicalInfoPage,
     EditMedicalInfoPage,
     MyPhotosPage,
-    AddPhotoPage
+    AddPhotoPage,
+    WeightPage,
+    MyWeightPage,
+    AddWeightPage
   ],
   providers: [
     IonicStorageModule,
@@ -124,7 +134,8 @@ import { Storage } from "@ionic/storage";
     StreamingMedia,
     LearningModulesService,
     AppointmentsService,
-    ToDoService
+    ToDoService,
+    WeightService
     
   ]
 })
