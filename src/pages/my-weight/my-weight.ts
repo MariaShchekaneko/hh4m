@@ -2,11 +2,7 @@ import { WeightPage } from './../weight/weight';
 import { WeightService } from './../../services/weight.service';
 import { Weight } from './../../models/weight';
 import { AddWeightPage } from './../add-weight/add-weight';
-import { ToDoPage } from './../to-do/to-do';
-import { ToDoService } from './../../services/toDo.service';
 import { ModalController } from 'ionic-angular';
-import { ToDo } from './../../models/toDo';
-import { AddToDosPage } from './../add-to-dos/add-to-dos';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

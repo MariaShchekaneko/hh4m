@@ -1,3 +1,7 @@
+import { BloodPressureService } from './../services/bloodPressure.service';
+import { AddBloodPressurePage } from './../pages/add-blood-pressure/add-blood-pressure';
+import { MyBloodPressurePage } from './../pages/my-blood-pressure/my-blood-pressure';
+import { BloodPressurePage } from './../pages/blood-pressure/blood-pressure';
 import { WeightService } from './../services/weight.service';
 import { AddWeightPage } from './../pages/add-weight/add-weight';
 import { MyWeightPage } from './../pages/my-weight/my-weight';
@@ -78,7 +82,10 @@ import { Storage } from "@ionic/storage";
     AddPhotoPage,
     WeightPage,
     MyWeightPage,
-    AddWeightPage
+    AddWeightPage,
+    BloodPressurePage,
+    MyBloodPressurePage,
+    AddBloodPressurePage
   ],
   imports: [
     BrowserModule,
@@ -121,7 +128,10 @@ import { Storage } from "@ionic/storage";
     AddPhotoPage,
     WeightPage,
     MyWeightPage,
-    AddWeightPage
+    AddWeightPage,
+    BloodPressurePage,
+    MyBloodPressurePage,
+    AddBloodPressurePage
   ],
   providers: [
     IonicStorageModule,
@@ -135,7 +145,9 @@ import { Storage } from "@ionic/storage";
     LearningModulesService,
     AppointmentsService,
     ToDoService,
-    WeightService
+    WeightService,
+    BloodPressureService
+    
     
   ]
 })

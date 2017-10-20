@@ -1,5 +1,5 @@
+import { MyBloodPressurePage } from './../my-blood-pressure/my-blood-pressure';
 import { MyWeightPage } from './../my-weight/my-weight';
-import { MyPhotosPage } from './../my-photos/my-photos';
 import { MyToDosPage } from './../my-to-dos/my-to-dos';
 import { MyAppointmentsPage } from './../my-appointments/my-appointments';
 import { Component } from '@angular/core';
@@ -11,6 +11,6 @@ import { Component } from '@angular/core';
 export class MyProgressPage{
   myAppointmentsPage = MyAppointmentsPage;
   myToDosPage = MyToDosPage;
-  myPhotosPage = MyPhotosPage;
+  myBloodPressurePage = MyBloodPressurePage;
   myWeightPage = MyWeightPage
 }
