@@ -1,4 +1,5 @@
 export class ToDo {
-    constructor( public title: String,
+    constructor( public date: Date,
+                 public title: String,
                  public description: String){}
 }

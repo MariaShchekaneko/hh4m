@@ -1,9 +1,6 @@
 import { BloodPressure } from './../models/bloodPressure';
 import { Storage } from '@ionic/storage';
 import { Injectable } from "@angular/core";
-import { File } from "ionic-native";
-
-declare var cordova: any;
 
 @Injectable()
 export class BloodPressureService {

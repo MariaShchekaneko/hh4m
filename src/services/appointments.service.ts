@@ -1,10 +1,7 @@
 import { Appointment } from './../models/appointment';
 import { Storage } from '@ionic/storage';
 import { Injectable } from "@angular/core";
-import { File } from "ionic-native";
 import { Location } from "../models/location";
-
-declare var cordova: any;
 
 @Injectable()
 export class AppointmentsService {

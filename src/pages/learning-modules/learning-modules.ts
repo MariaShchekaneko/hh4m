@@ -2,7 +2,6 @@ import { ModulesByCategoryPage } from './../modules-by-category/modules-by-categ
 import { Component, OnInit } from '@angular/core';
 import { Module } from '../../data/module.interface';
 import modules from '../../data/modules';
-import {LearningModulePage} from '../../pages/learning-module/learning-module'
 import { ModalController } from 'ionic-angular';
 
 
@@ -20,11 +19,4 @@ export class LearningModulesPage implements OnInit{
     this.moduleCollection = modules;
     
   }
-
-  /*onOpenModule(module: Module, index: number) {
-    const modal = this.modalCtrl.create(ModulesByCategoryPage, {module: module, index: index});
-    modal.present();
-    
-  }*/
-  
 }

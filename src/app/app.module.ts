@@ -1,3 +1,5 @@
+import { WorkoutsPage } from './../pages/workouts/workouts';
+import { HealthPage } from './../pages/health/health';
 import { BloodPressureService } from './../services/bloodPressure.service';
 import { AddBloodPressurePage } from './../pages/add-blood-pressure/add-blood-pressure';
 import { MyBloodPressurePage } from './../pages/my-blood-pressure/my-blood-pressure';
@@ -8,8 +10,6 @@ import { MyWeightPage } from './../pages/my-weight/my-weight';
 import { WeightPage } from './../pages/weight/weight';
 import { EditMedicalInfoPage } from './../pages/edit-medical-info/edit-medical-info';
 import { MyMedicalInfoPage } from './../pages/my-medical-info/my-medical-info';
-import { MyPhotosPage } from './../pages/my-photos/my-photos';
-import { AddPhotoPage } from './../pages/add-photo/add-photo';
 import { ToDoService } from './../services/toDo.service';
 import { ToDoPage } from './../pages/to-do/to-do';
 import { AddToDosPage } from './../pages/add-to-dos/add-to-dos';
@@ -42,12 +42,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { StreamingMedia } from '@ionic-native/streaming-media';
 import { MyApp } from './app.component';
 import { LearningModulesService } from './../services/learningModules.service';
 import { SetLocationPage } from "../pages/set-location/set-location";
 import { AgmCoreModule } from "angular2-google-maps/core";
-import { Storage } from "@ionic/storage";
+import { HealthKit } from '@ionic-native/health-kit';
 
 @NgModule({
   declarations: [
@@ -73,19 +73,17 @@ import { Storage } from "@ionic/storage";
     MyToDosPage,
     AddToDosPage,
     ToDoPage,
-    AddPhotoPage,
-    MyPhotosPage,
     SetLocationPage,
     MyMedicalInfoPage,
     EditMedicalInfoPage,
-    MyPhotosPage,
-    AddPhotoPage,
     WeightPage,
     MyWeightPage,
     AddWeightPage,
     BloodPressurePage,
     MyBloodPressurePage,
-    AddBloodPressurePage
+    AddBloodPressurePage,
+    HealthPage,
+    WorkoutsPage
   ],
   imports: [
     BrowserModule,
@@ -119,19 +117,17 @@ import { Storage } from "@ionic/storage";
     MyToDosPage,
     AddToDosPage,
     ToDoPage,
-    AddPhotoPage,
-    MyPhotosPage,
     SetLocationPage,
     MyMedicalInfoPage,
     EditMedicalInfoPage,
-    MyPhotosPage,
-    AddPhotoPage,
     WeightPage,
     MyWeightPage,
     AddWeightPage,
     BloodPressurePage,
     MyBloodPressurePage,
-    AddBloodPressurePage
+    AddBloodPressurePage,
+    HealthPage,
+    WorkoutsPage
   ],
   providers: [
     IonicStorageModule,
@@ -146,7 +142,8 @@ import { Storage } from "@ionic/storage";
     AppointmentsService,
     ToDoService,
     WeightService,
-    BloodPressureService
+    BloodPressureService,
+    HealthKit
     
     
   ]

@@ -15,7 +15,8 @@ export class AddToDosPage {
   }
 
   onSubmit(form: NgForm) {
-   this.toDoService.addToDo(form.value.title, 
+   this.toDoService.addToDo(form.value.date,
+                            form.value.title, 
                             form.value.description);
   form.resetForm();
   const toast = this.toastCtrl.create({

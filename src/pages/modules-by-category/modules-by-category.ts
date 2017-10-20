@@ -3,7 +3,6 @@ import { LearningModulesService } from './../../services/learningModules.service
 import { LearningModulePage } from './../learning-module/learning-module';
 import { Module } from './../../data/module.interface';
 import { Component, OnInit } from '@angular/core';
-import modules from '../../data/modules';
 
 @Component({
   selector: 'page-modules-by-category',

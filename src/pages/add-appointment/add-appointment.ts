@@ -1,16 +1,13 @@
 import { SetLocationPage } from './../set-location/set-location';
 import { Location } from './../../models/location';
-import { ToastController, AlertController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import { Appointment } from './../../models/appointment';
 import { NgForm } from '@angular/forms';
 import { AppointmentsService } from './../../services/appointments.service';
 import { Component } from '@angular/core';
-import { Geolocation, Camera, File, Entry, FileError } from "ionic-native";
+import { Geolocation } from "ionic-native";
 
-
-declare var cordova: any;
 @Component({
   selector: 'page-add-appointment',
   templateUrl: 'add-appointment.html',
@@ -25,8 +22,7 @@ export class AddAppointmentPage {
   constructor(private modalCtrl: ModalController,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
-              private appointmentsService: AppointmentsService,
-              private alertCtrl : AlertController) {
+              private appointmentsService: AppointmentsService) {
   }
 
   onSubmit(form: NgForm) {

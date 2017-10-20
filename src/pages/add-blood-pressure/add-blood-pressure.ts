@@ -1,11 +1,8 @@
 import { BloodPressureService } from './../../services/bloodPressure.service';
 import { BloodPressure } from './../../models/bloodPressure';
-import { Weight } from './../../models/weight';
 import { NgForm } from '@angular/forms';
 import { ToastController } from 'ionic-angular';
-import { WeightService } from './../../services/weight.service';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({

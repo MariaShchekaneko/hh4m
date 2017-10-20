@@ -10,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'my-weight.html',
 })
 export class MyWeightPage implements OnInit {
+
   addWeightPage = AddWeightPage;
   weights: Weight[] = [];
+  
   constructor(public modalCtrl: ModalController,
               private weightService: WeightService){}
 

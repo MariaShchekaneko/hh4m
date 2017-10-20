@@ -1,9 +1,6 @@
 import { ToDo } from './../models/toDo';
 import { Storage } from '@ionic/storage';
 import { Injectable } from "@angular/core";
-import { File } from "ionic-native";
-
-declare var cordova: any;
 
 @Injectable()
 export class ToDoService {
@@ -11,9 +8,10 @@ export class ToDoService {
 
     constructor(private storage: Storage) {}
 
-    addToDo(title: string,
+    addToDo(date: Date,
+            title: string,
             description: string) {
-        const toDo = new ToDo(title, description);
+        const toDo = new ToDo(date, title, description);
         this.toDos.push(toDo);
         this.storage.set('toDos', this.toDos)
         .then()

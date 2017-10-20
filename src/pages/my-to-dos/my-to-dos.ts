@@ -18,7 +18,7 @@ export class MyToDosPage implements OnInit {
   ngOnInit() {
     this.toDoService.fetchToDos()
       .then(
-        (appointments: ToDo[]) => this.toDos = appointments
+        (toDos: ToDo[]) => this.toDos = toDos
       );
   }
   ionViewWillEnter(){
