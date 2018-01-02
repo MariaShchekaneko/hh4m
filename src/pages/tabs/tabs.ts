@@ -1,6 +1,8 @@
+import { MyActivityPage } from './../my-activity/my-activity';
+import { MedicalIdPage } from './../medical-id/medical-id';
 import { MyMealsPage } from './../my-meals/my-meals';
 import { ActionPlannerPage } from './../action-planner/action-planner';
-import { ChatPage } from './../chat/chat';
+//import { ChatPage } from './../chat/chat';
 import { MyProgressPage } from './../my-progress/my-progress';
 import { LearningModulesPage } from './../learning-modules/learning-modules';
 import { TodayPage } from './../today/today';
@@ -15,8 +17,8 @@ export class TabsPage {
   todayPage = TodayPage;
   learningModulesPage = LearningModulesPage;
   myProgressPage = MyProgressPage;
-  actionPlannerPage = ActionPlannerPage;
-  chatPage = ChatPage;
+  //chatPage = ChatPage;
+  myActivityPage = MyActivityPage;
   myMealsPage = MyMealsPage
 
 }

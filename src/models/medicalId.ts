@@ -1,4 +1,4 @@
-export class MedicalInfo {
+export class MedicalId {
    constructor(
 
        public medicalConditions: string, 

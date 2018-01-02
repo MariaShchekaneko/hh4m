@@ -43,6 +43,7 @@ export class AddAppointmentPage {
     duration: 2500
   });
   toast.present();
+  
 }
 onOpenMap() {
   const modal = this.modalCtrl.create(SetLocationPage,

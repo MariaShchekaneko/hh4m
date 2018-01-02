@@ -1,5 +1,12 @@
+import { MyActivityPage } from './../pages/my-activity/my-activity';
+import { MedicalIdService } from './../services/medicalId.service';
+import { MyMedicalIdPage } from './../pages/my-medical-id/my-medical-id';
+import { MedicalIdPage } from './../pages/medical-id/medical-id';
+import { MedicalId } from './../models/medicalId';
+import { SettingsService } from './../services/settings.service';
+import { StepCounterPage } from './../pages/step-counter/step-counter';
+import { StepCounterSettingsPage } from './../pages/step-counter-settings/step-counter-settings';
 import { WorkoutsPage } from './../pages/workouts/workouts';
-import { HealthPage } from './../pages/health/health';
 import { BloodPressureService } from './../services/bloodPressure.service';
 import { AddBloodPressurePage } from './../pages/add-blood-pressure/add-blood-pressure';
 import { MyBloodPressurePage } from './../pages/my-blood-pressure/my-blood-pressure';
@@ -8,8 +15,6 @@ import { WeightService } from './../services/weight.service';
 import { AddWeightPage } from './../pages/add-weight/add-weight';
 import { MyWeightPage } from './../pages/my-weight/my-weight';
 import { WeightPage } from './../pages/weight/weight';
-import { EditMedicalInfoPage } from './../pages/edit-medical-info/edit-medical-info';
-import { MyMedicalInfoPage } from './../pages/my-medical-info/my-medical-info';
 import { ToDoService } from './../services/toDo.service';
 import { ToDoPage } from './../pages/to-do/to-do';
 import { AddToDosPage } from './../pages/add-to-dos/add-to-dos';
@@ -48,7 +53,9 @@ import { LearningModulesService } from './../services/learningModules.service';
 import { SetLocationPage } from "../pages/set-location/set-location";
 import { AgmCoreModule } from "angular2-google-maps/core";
 import { HealthKit } from '@ionic-native/health-kit';
-
+import { Pedometer } from '@ionic-native/pedometer';
+import { ChartModule } from 'angular2-highcharts';
+import * as highcharts from 'Highcharts';
 @NgModule({
   declarations: [
     MyApp,
@@ -74,19 +81,22 @@ import { HealthKit } from '@ionic-native/health-kit';
     AddToDosPage,
     ToDoPage,
     SetLocationPage,
-    MyMedicalInfoPage,
-    EditMedicalInfoPage,
     WeightPage,
     MyWeightPage,
     AddWeightPage,
     BloodPressurePage,
     MyBloodPressurePage,
     AddBloodPressurePage,
-    HealthPage,
-    WorkoutsPage
+    WorkoutsPage,
+    StepCounterSettingsPage,
+    StepCounterPage,
+    MyMedicalIdPage,
+    MedicalIdPage,
+    MyActivityPage
   ],
   imports: [
     BrowserModule,
+    ChartModule.forRoot(highcharts),
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
@@ -118,16 +128,18 @@ import { HealthKit } from '@ionic-native/health-kit';
     AddToDosPage,
     ToDoPage,
     SetLocationPage,
-    MyMedicalInfoPage,
-    EditMedicalInfoPage,
     WeightPage,
     MyWeightPage,
     AddWeightPage,
     BloodPressurePage,
     MyBloodPressurePage,
     AddBloodPressurePage,
-    HealthPage,
-    WorkoutsPage
+    WorkoutsPage,
+    StepCounterSettingsPage,
+    StepCounterPage,
+    MyMedicalIdPage,
+    MedicalIdPage,
+    MyActivityPage
   ],
   providers: [
     IonicStorageModule,
@@ -143,7 +155,11 @@ import { HealthKit } from '@ionic-native/health-kit';
     ToDoService,
     WeightService,
     BloodPressureService,
-    HealthKit
+    HealthKit,
+    Pedometer,
+    SettingsService,
+    MedicalIdService
+    
     
     
   ]

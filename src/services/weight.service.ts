@@ -13,9 +13,8 @@ export class WeightService {
 
     addWeight(date: Date,
             weight: number,
-            unit: string, 
             imageUrl: string) {
-        const my_weight = new Weight(date, weight, unit, imageUrl);
+        const my_weight = new Weight(date, weight, imageUrl);
         this.weights.push(my_weight);
         this.storage.set('weights', this.weights)
         .then()
@@ -64,7 +63,7 @@ export class WeightService {
           .catch(
             () => {
               console.log('Error while removing File');
-              this.addWeight(weight.date, weight.weight, weight.unit, weight.imageUrl);
+              this.addWeight(weight.date, weight.weight, weight.imageUrl);
             }
           );
       }

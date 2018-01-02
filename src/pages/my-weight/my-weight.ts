@@ -10,12 +10,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'my-weight.html',
 })
 export class MyWeightPage implements OnInit {
-
+  chartOptions: any;
   addWeightPage = AddWeightPage;
   weights: Weight[] = [];
   
   constructor(public modalCtrl: ModalController,
-              private weightService: WeightService){}
+              private weightService: WeightService){
+                this.chartOptions  = {
+                  chart: {
+                    type: 'bar',
+                  },
+                  title: {
+                    text: 'My Weight'
+                  },
+                  xAxis: {
+                    type: 'datetime'
+                  }
+                }
+  }
 
   ngOnInit() {
     this.weightService.fetchWeights()

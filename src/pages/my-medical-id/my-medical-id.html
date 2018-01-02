@@ -1,0 +1,52 @@
+
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>My Medical Info</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <p>{{ medicalConditions }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p>{{ bloodType }}</p>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col text-center>
+            <p>{{ allergies }}</p>
+          </ion-col>
+        </ion-row>
+        
+          <ion-row>
+            <ion-col text-center>
+              <p>{{ medications }}</p>
+            </ion-col>
+          </ion-row>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            outline
+            block
+            (click)="onEditMedicalInfo()">Edit My Medical Info</button>
+        </ion-col>
+        <ion-col>
+          <button
+            ion-button
+            outline
+            block
+            (click)="onDeleteMedicalInfo()"
+            color="danger">Delete Medical ID</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

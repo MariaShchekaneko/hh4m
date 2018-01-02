@@ -14,11 +14,11 @@ declare var cordova: any;
   selector: 'page-add-weight',
   templateUrl: 'add-weight.html',
 })
-
 export class AddWeightPage {
+ 
+  weight: Weight;
+  imageUrl = '';
 
-    weight: Weight;
-    imageUrl = '';
 
     constructor(
       private weightService: WeightService,
@@ -27,7 +27,6 @@ export class AddWeightPage {
     onSubmit(form: NgForm) {
       this.weightService.addWeight(form.value.date, 
                                    form.value.weight,
-                                   form.value.unit,
                                    this.imageUrl);
      form.resetForm();
      this.imageUrl = '';

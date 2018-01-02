@@ -1,0 +1,49 @@
+
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Medical Info</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+ 
+  <ion-content padding>
+    <form [formGroup]="medicalInfoForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Medical Conditions</ion-label>
+          <ion-input
+            type="text"
+            formControlName="medicalConditions"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Blood Type</ion-label>
+          <ion-select formControlName="bloodType">
+            <ion-option
+            *ngFor="let option of selectOptions"
+            [value]="option">{{ option }}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+           <ion-label floating>Allergies</ion-label>
+           <ion-input
+           type="text"
+           formControlName="allergies"></ion-input>
+       </ion-item>
+       <ion-item>
+        <ion-label floating>Medications</ion-label>
+        <ion-input
+        type="text"
+        formControlName="medications"></ion-input>
+    </ion-item>
+      </ion-list>
+      <button
+        type="submit"
+        ion-button
+        [navPush] = "myMedicalIdPage"
+        block
+        [disabled]="!medicalInfoForm.valid"
+        >Submit Medical Info</button>
+    </form>
+  </ion-content>
+  

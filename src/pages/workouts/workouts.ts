@@ -31,7 +31,7 @@ export class WorkoutsPage {
 
   // Reload all our data
   loadHealthData() {
-      var stepOptions = {
+    var stepOptions = {
       startDate: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
       endDate: new Date(),
       sampleType: 'HKQuantityTypeIdentifierStepCount',
