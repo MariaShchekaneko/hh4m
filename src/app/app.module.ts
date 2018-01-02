@@ -1,8 +1,4 @@
 import { MyActivityPage } from './../pages/my-activity/my-activity';
-import { MedicalIdService } from './../services/medicalId.service';
-import { MyMedicalIdPage } from './../pages/my-medical-id/my-medical-id';
-import { MedicalIdPage } from './../pages/medical-id/medical-id';
-import { MedicalId } from './../models/medicalId';
 import { SettingsService } from './../services/settings.service';
 import { StepCounterPage } from './../pages/step-counter/step-counter';
 import { StepCounterSettingsPage } from './../pages/step-counter-settings/step-counter-settings';
@@ -90,8 +86,6 @@ import * as highcharts from 'Highcharts';
     WorkoutsPage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyMedicalIdPage,
-    MedicalIdPage,
     MyActivityPage
   ],
   imports: [
@@ -137,8 +131,6 @@ import * as highcharts from 'Highcharts';
     WorkoutsPage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyMedicalIdPage,
-    MedicalIdPage,
     MyActivityPage
   ],
   providers: [
@@ -158,7 +150,7 @@ import * as highcharts from 'Highcharts';
     HealthKit,
     Pedometer,
     SettingsService,
-    MedicalIdService
+   // MedicalIdService
     
     
     

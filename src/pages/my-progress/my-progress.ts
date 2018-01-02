@@ -1,4 +1,3 @@
-import { MedicalIdPage } from './../medical-id/medical-id';
 import { StepCounterPage } from './../step-counter/step-counter';
 //import { WorkoutsPage } from './../workouts/workouts';
 import { MyBloodPressurePage } from './../my-blood-pressure/my-blood-pressure';
@@ -17,6 +16,5 @@ export class MyProgressPage{
   myBloodPressurePage = MyBloodPressurePage;
   myWeightPage = MyWeightPage;
   //stepCounterPage = StepCounterPage;
-  medicalIdPage = MedicalIdPage;
 
 }

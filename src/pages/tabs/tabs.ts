@@ -1,5 +1,4 @@
 import { MyActivityPage } from './../my-activity/my-activity';
-import { MedicalIdPage } from './../medical-id/medical-id';
 import { MyMealsPage } from './../my-meals/my-meals';
 import { ActionPlannerPage } from './../action-planner/action-planner';
 //import { ChatPage } from './../chat/chat';
