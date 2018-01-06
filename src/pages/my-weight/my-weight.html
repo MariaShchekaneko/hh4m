@@ -17,9 +17,9 @@
 
 
 <ion-content padding>
-  <ion-card>
- <chart [options] = "chartOptions" type = "chart"></chart>
-</ion-card>
+    <section class="chart-wrapper">
+        <canvas #barChart></canvas>
+     </section>
   <ion-card *ngFor="let weight of weights; let i=index" (click)="onOpenWeight(weight, i)">
     
       <ion-card-content text-center>

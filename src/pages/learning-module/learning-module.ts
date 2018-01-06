@@ -29,7 +29,7 @@ export class LearningModulePage {
       errorCallback: () => {console.log()},
       orientation: 'landscape'
     };
-    this.steamingMedia.playVideo(videoUrl, options);
+    this.steamingMedia.playVideo(videoUrl);
   }
 
 }

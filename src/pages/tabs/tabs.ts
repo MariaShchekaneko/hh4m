@@ -1,6 +1,6 @@
 import { MyActivityPage } from './../my-activity/my-activity';
 import { MyMealsPage } from './../my-meals/my-meals';
-import { ActionPlannerPage } from './../action-planner/action-planner';
+//import { ActionPlannerPage } from './../action-planner/action-planner';
 //import { ChatPage } from './../chat/chat';
 import { MyProgressPage } from './../my-progress/my-progress';
 import { LearningModulesPage } from './../learning-modules/learning-modules';

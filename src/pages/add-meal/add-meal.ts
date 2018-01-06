@@ -1,4 +1,4 @@
-import { Ingredients } from './../../models/ingredients';
+//import { Ingredients } from './../../models/ingredients';
 import { MealsService } from './../../services/meals.service';
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
