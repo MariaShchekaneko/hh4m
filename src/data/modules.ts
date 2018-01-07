@@ -5,19 +5,22 @@ export default [
     {
     id: "Module 1. Welcom to HH4M" ,
     description: "In this module, we will learn about how preeclampsia can affect your future health and get an introduction to the program.",
-    videoUrl: "https://player.vimeo.com/video/129693969?api=1&player_id=video"
+   // videoUrl: "https://player.vimeo.com/video/129693969?api=1&player_id=video"
+    videoUrl: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
     },
 
     {
     id: "Module 2. Eating the DASH Way" ,
     description: "This week, we will learn what the DASH eating plan is, and learn how to follow DASH.",
-    videoUrl: "https://player.vimeo.com/video/133148174?api=1&player_id=video"
+    //videoUrl: "https://player.vimeo.com/video/133148174?api=1&player_id=video"
+    videoUrl: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
     }, 
 
     {
     id: "Module 3. Part 1: Getting Support: Who’s On My Team?" ,
     description: "In this module, we will talk about how we can get support from families and friends.",
-    videoUrl: "https://player.vimeo.com/video/133151263?api=1&player_id=video"
+    //videoUrl: "https://player.vimeo.com/video/133151263?api=1&player_id=video"
+    videoUrl: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4"
     }, 
     
     {

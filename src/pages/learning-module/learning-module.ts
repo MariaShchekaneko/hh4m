@@ -14,22 +14,25 @@ export class LearningModulePage {
   videoUrl: string;
 
   constructor(public navParams: NavParams,
-  private viewCtrl: ViewController,
-  private steamingMedia: StreamingMedia
-) {
-  this.module = this.navParams.get('module');
-  }
+              private viewCtrl: ViewController,
+              private steamingMedia: StreamingMedia)
+    {
+    this.module = this.navParams.get('module');
+    //this.videoUrl = this.navParams.get('module.videoUrl');
+    }
+
   onLeave() {
     this.viewCtrl.dismiss();
   }
 
-  onStartVideo(videoUrl){
+  onStartVideo() {
     let options: StreamingVideoOptions = {
-      successCallback: () => {console.log()},
-      errorCallback: () => {console.log()},
+      successCallback: () => {console.log('SUCCESS')},
+      errorCallback: () => {console.log('ERROR')},
       orientation: 'landscape'
     };
-    this.steamingMedia.playVideo(videoUrl);
+
+    this.steamingMedia.playVideo(this.module.videoUrl, options);
   }
 
 }
