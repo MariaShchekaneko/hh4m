@@ -15,6 +15,13 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content{
+//background-image: url('https://mybroadband.co.za/news/wp-content/uploads/2015/05/Mom-and-baby.jpg');
+background-image: linear-gradient(to bottom , pink,white);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain; 
+}
 
-background: #56CA96;
+.ion-card{
+    background-image: url('../assets/card/bk.jpg')
 }

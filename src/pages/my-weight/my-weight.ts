@@ -12,89 +12,60 @@ import { Chart } from 'chart.js';
 })
 
 export class MyWeightPage {
-  @ViewChild('barChart') barChart;
+  //@ViewChild('barChart') barChart;
   addWeightPage = AddWeightPage;
   weights: Weight[] = [];
- // public pieChartEl                : any;
-  public barChartEl                : any;
- // public lineChartEl               : any;
-  public chartLabels               : any    = [];
-  public chartValues               : any    = [];
-  public chartColours              : any    = [];
-  public chartHoverColours         : any    = [];
-  public chartLoadingEl            : any;
+  weights_bk: Weight;
 
+  @ViewChild('lineCanvas') lineCanvas;
+  lineChart: any;
 
   constructor( public modalCtrl:      ModalController,
                public navCtrl      :  NavController,
                public navParams    :  NavParams,
                private weightService: WeightService)
-  { }
-
-
-
-
-  ionViewDidLoad()
   {
-     this.defineChartData();
-     this.createBarChart();
-  }
-
-  defineChartData() : void
-   {
-      let k : any;
-
-      for(k in this.weights.entries)
-      {
-         var weight  =  this.weights.entries[k];
-
-         this.chartLabels.push(weight.date);
-         this.chartValues.push(weight.weight);
-      }
+   this.weights = this.navParams.get('weight');
+  this.weights_bk = this.navParams.get('weight');
    }
 
 
-   createBarChart()
-{
-   this.barChartEl  = new Chart(this.barChart.nativeElement,
-   {
-      type: 'bar',
+
+  ionViewDidLoad() {
+    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+ 
+      type: 'line',
       data: {
-         labels: this.chartLabels,
-         datasets: [{
-            label                 : 'Weight',
-            data                  : this.weights,
-            duration              : 2000,
-            easing                : 'easeInQuart',
-            backgroundColor       : this.chartColours,
-            hoverBackgroundColor  : this.chartHoverColours
-         }]
-      },
-      options : {
-         maintainAspectRatio: false,
-         legend         : {
-            display     : true,
-            boxWidth    : 80,
-            fontSize    : 15,
-            padding     : 0
-         },
-         scales: {
-            yAxes: [{
-               ticks: {
-                  beginAtZero:true,
-                  stepSize: 5,
-                  max : 100
-               }
-            }],
-            xAxes: [{
-               ticks: {
-                  autoSkip: false
-               }
-            }]
-         }
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [
+              {
+                  label: "My First dataset",
+                  fill: false,
+                  lineTension: 0.1,
+                  backgroundColor: "rgba(75,192,192,0.4)",
+                  borderColor: "rgba(75,192,192,1)",
+                  borderCapStyle: 'butt',
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  borderJoinStyle: 'miter',
+                  pointBorderColor: "rgba(75,192,192,1)",
+                  pointBackgroundColor: "#fff",
+                  pointBorderWidth: 1,
+                  pointHoverRadius: 5,
+                  pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                  pointHoverBorderColor: "rgba(220,220,220,1)",
+                  pointHoverBorderWidth: 2,
+                  pointRadius: 1,
+                  pointHitRadius: 10,
+                  data: [],
+                  spanGaps: false,
+              }
+          ]
       }
-   });
+
+  });
 }
+
 ngOnInit() {
   this.weightService.fetchWeights()
     .then(
@@ -114,45 +85,3 @@ onOpenWeight(weight: Weight, index: number) {
   );
 }
 }
-
-
-/*export class MyWeightPage implements OnInit {
-  chartOptions: any;
-  addWeightPage = AddWeightPage;
-  weights: Weight[] = [];
-  
-  constructor(public modalCtrl: ModalController,
-              private weightService: WeightService){
-                this.chartOptions  = {
-                  chart: {
-                    type: 'bar',
-                  },
-                  title: {
-                    text: 'My Weight'
-                  },
-                  xAxis: {
-                    type: 'datetime'
-                  }
-                }
-  }
-
-  ngOnInit() {
-    this.weightService.fetchWeights()
-      .then(
-        (weights: Weight[]) => this.weights = weights
-      );
-  }
-  ionViewWillEnter(){
-    this.weights = this.weightService.loadWeights();
-  }
-  onOpenWeight(weight: Weight, index: number) {
-    const modal = this.modalCtrl.create(WeightPage, {weight: weight, index: index});
-    modal.present();
-    modal.onDidDismiss(
-      () => {
-        this.weights = this.weightService.loadWeights();
-      }
-    );
-  }
-}
-*/

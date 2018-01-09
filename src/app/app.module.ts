@@ -52,6 +52,8 @@ import { HealthKit } from '@ionic-native/health-kit';
 import { Pedometer } from '@ionic-native/pedometer';
 import { ChartModule } from 'angular2-highcharts';
 import * as highcharts from 'Highcharts';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import {YoutubePipe} from '../pipes/youtube/youtube';
 @NgModule({
   declarations: [
     MyApp,
@@ -86,7 +88,8 @@ import * as highcharts from 'Highcharts';
     WorkoutsPage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyActivityPage
+    MyActivityPage,
+    YoutubePipe
   ],
   imports: [
     BrowserModule,
@@ -150,6 +153,7 @@ import * as highcharts from 'Highcharts';
     HealthKit,
     Pedometer,
     SettingsService,
+    YoutubeVideoPlayer,
    // MedicalIdService
     
     

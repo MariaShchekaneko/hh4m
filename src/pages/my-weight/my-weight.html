@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-buttons end>
       <button ion-button icon-only [navPush] = "addWeightPage">
         <ion-icon name = "add"></ion-icon>
@@ -18,10 +18,14 @@
 
 
 <ion-content padding>
-    <p>HELLO WORLD</p>
-    <section class="chart-wrapper">
-        <canvas #barChart></canvas>
-     </section>
+  <ion-card>
+    <ion-card-header>
+      Weight
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
   <ion-card *ngFor="let weight of weights; let i=index" (click)="onOpenWeight(weight, i)">
     
       <ion-card-content text-center>
