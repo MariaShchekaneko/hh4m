@@ -1,25 +1,46 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ChatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
+import { NavController,AlertController } from 'ionic-angular';
+import * as firebase from 'firebase';
 @Component({
   selector: 'page-chat',
-  templateUrl: 'chat.html',
+  templateUrl: 'chat.html'
 })
 export class ChatPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	ref;
+	name;
+	newmessage;
+	messagesList;
+  constructor(public navCtrl: NavController, public alert: AlertController) {
+    this.ref = firebase.database().ref('messages');
   }
+  ionViewDidLoad(){
+    var user = firebase.auth().currentUser;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ChatPage');
+    //this.name = user.displayName;
+  	//reading data from firebase
+  	this.ref.on('value',data => {
+  		let tmp = [];
+  		data.forEach( data => {
+  			tmp.push({
+  				key: data.key,
+  				name: data.val().name,
+  				message: data.val().message
+  			})
+  		});
+  		this.messagesList = tmp;
+    });
+    if (user != null) {
+      user.providerData.forEach(function (profile) {
+        console.log("  Email: " + profile.email);
+      });
+    }
+  }
+  send(){
+  	// add new data to firebase
+  	this.ref.push({
+  	  name: firebase.auth().currentUser.email,
+  		message: this.newmessage 
+  	});
   }
 
 }

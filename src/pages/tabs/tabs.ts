@@ -1,10 +1,9 @@
 import { MyActivityPage } from './../my-activity/my-activity';
-import { MyMealsPage } from './../my-meals/my-meals';
-//import { ActionPlannerPage } from './../action-planner/action-planner';
-//import { ChatPage } from './../chat/chat';
+import { MyMealsPage } from './../my-meals/my-meals'
 import { MyProgressPage } from './../my-progress/my-progress';
 import { LearningModulesPage } from './../learning-modules/learning-modules';
 import { TodayPage } from './../today/today';
+import { ChatPage} from './../chat/chat';
 import { Component } from '@angular/core';
 
 
@@ -16,7 +15,7 @@ export class TabsPage {
   todayPage = TodayPage;
   learningModulesPage = LearningModulesPage;
   myProgressPage = MyProgressPage;
-  //chatPage = ChatPage;
+  chatPage = ChatPage;
   myActivityPage = MyActivityPage;
   myMealsPage = MyMealsPage
 
