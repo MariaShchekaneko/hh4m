@@ -9,4 +9,7 @@ export class AuthService {
     logout(){
         firebase.auth().signOut();
     }
+    resetPassword(email: string): any {
+        return firebase.auth().sendPasswordResetEmail(email);
+      }
 }

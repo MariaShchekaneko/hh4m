@@ -1,8 +1,8 @@
+import { ResetPasswordPage } from './../pages/reset-password/reset-password';
 import { MyActivityPage } from './../pages/my-activity/my-activity';
 import { SettingsService } from './../services/settings.service';
 import { StepCounterPage } from './../pages/step-counter/step-counter';
 import { StepCounterSettingsPage } from './../pages/step-counter-settings/step-counter-settings';
-import { WorkoutsPage } from './../pages/workouts/workouts';
 import { BloodPressureService } from './../services/bloodPressure.service';
 import { AddBloodPressurePage } from './../pages/add-blood-pressure/add-blood-pressure';
 import { MyBloodPressurePage } from './../pages/my-blood-pressure/my-blood-pressure';
@@ -85,11 +85,11 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     BloodPressurePage,
     MyBloodPressurePage,
     AddBloodPressurePage,
-    WorkoutsPage,
     StepCounterSettingsPage,
     StepCounterPage,
     MyActivityPage,
-    YoutubePipe
+    YoutubePipe,
+    ResetPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -131,10 +131,10 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     BloodPressurePage,
     MyBloodPressurePage,
     AddBloodPressurePage,
-    WorkoutsPage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyActivityPage
+    MyActivityPage,
+    ResetPasswordPage
   ],
   providers: [
     IonicStorageModule,

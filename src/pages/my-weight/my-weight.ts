@@ -2,8 +2,8 @@ import { WeightPage } from './../weight/weight';
 import { WeightService } from './../../services/weight.service';
 import { Weight } from './../../models/weight';
 import { AddWeightPage } from './../add-weight/add-weight';
-import { ModalController , IonicPage, NavController, NavParams} from 'ionic-angular';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalController, NavController, NavParams} from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
