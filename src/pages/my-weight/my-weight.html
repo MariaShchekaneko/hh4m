@@ -18,14 +18,7 @@
 
 
 <ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      Weight
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
+
   <ion-card *ngFor="let weight of weights; let i=index" (click)="onOpenWeight(weight, i)">
     
       <ion-card-content text-center>

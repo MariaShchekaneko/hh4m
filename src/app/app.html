@@ -9,13 +9,6 @@
             <button
             ion-item
             icon-left
-            (click)="onLoad(rootPage)"
-            *ngIf="isAuthenticated">
-            <ion-icon name="calendar"></ion-icon>
-            Today</button>
-            <button
-            ion-item
-            icon-left
             (click)="onLoad(signinPage)"
             *ngIf="!isAuthenticated">
             <ion-icon name="log-in"></ion-icon>

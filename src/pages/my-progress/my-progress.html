@@ -46,6 +46,41 @@
           </div>
         </button>
       </ion-col>
+      <ion-col col-6>
+        <button class="my_button"
+          ion-button
+          [navPush] = "myActivityPage">
+          <div>
+            <ion-icon name = 'medkit'></ion-icon>
+            <br>
+            <label>My Activity</label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <button class="my_button"
+          ion-button
+          [navPush] = "myMealsPage">
+          <div>
+            <ion-icon name = 'medkit'></ion-icon>
+            <br>
+            <label>My Meals</label>
+          </div>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button class="my_button"
+          ion-button
+          [navPush] = "myGoalsPage">
+          <div>
+            <ion-icon name = 'medkit'></ion-icon>
+            <br>
+            <label>My Goals</label>
+          </div>
+        </button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

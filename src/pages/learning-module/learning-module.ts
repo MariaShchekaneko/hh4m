@@ -1,7 +1,6 @@
 import { Module } from './../../models/module';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media'
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 @Component({
@@ -15,7 +14,6 @@ export class LearningModulePage {
 
   constructor(public navParams: NavParams,
               private viewCtrl: ViewController,
-              private steamingMedia: StreamingMedia,
               private youtube: YoutubeVideoPlayer
             )
     {

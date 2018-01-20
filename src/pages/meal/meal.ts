@@ -26,7 +26,7 @@ export class MealPage {
 
   onDelete() {
       const alert = this.alertCtrl.create ({
-      title: 'Remove Appointment',
+      title: 'Remove Meal',
       message: 'Are you sure you want to remove this meal?',
       buttons: [
         {

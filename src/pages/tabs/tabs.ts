@@ -12,11 +12,7 @@ import { Component } from '@angular/core';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  todayPage = TodayPage;
   learningModulesPage = LearningModulesPage;
   myProgressPage = MyProgressPage;
   chatPage = ChatPage;
-  myActivityPage = MyActivityPage;
-  myMealsPage = MyMealsPage
-
 }

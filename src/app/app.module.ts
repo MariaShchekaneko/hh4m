@@ -43,7 +43,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { StreamingMedia } from '@ionic-native/streaming-media';
 import { MyApp } from './app.component';
 import { LearningModulesService } from './../services/learningModules.service';
 import { SetLocationPage } from "../pages/set-location/set-location";
@@ -144,7 +143,6 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     AuthService,
     ActionPlannerService,
     MealsService,
-    StreamingMedia,
     LearningModulesService,
     AppointmentsService,
     ToDoService,
