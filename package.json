@@ -34,8 +34,6 @@
         "angular2-google-maps": "^0.17.0",
         "angular2-highcharts": "^0.5.5",
         "chart.js": "^2.7.1",
-        "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4",
-        "com.moust.cordova.videoplayer": "^1.0.1",
         "com.telerik.plugins.healthkit": "^0.5.5",
         "cordova-base64-to-gallery": "^4.1.2",
         "cordova-browser": "^4.1.0",
@@ -88,9 +86,7 @@
             "cordova-plugin-pedometer": {},
             "cordova-plugin-youtube-video-player": {},
             "cordova-plugin-media": {},
-            "cordova-plugin-file": {},
-            "com.hutchind.cordova.plugins.streamingmedia": {},
-            "com.moust.cordova.videoplayer": {}
+            "cordova-plugin-file": {}
         },
         "platforms": [
             "browser",
