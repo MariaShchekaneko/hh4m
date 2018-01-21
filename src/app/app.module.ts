@@ -1,5 +1,4 @@
 import { ResetPasswordPage } from './../pages/reset-password/reset-password';
-import { MyActivityPage } from './../pages/my-activity/my-activity';
 import { SettingsService } from './../services/settings.service';
 import { StepCounterPage } from './../pages/step-counter/step-counter';
 import { StepCounterSettingsPage } from './../pages/step-counter-settings/step-counter-settings';
@@ -86,7 +85,6 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     AddBloodPressurePage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyActivityPage,
     YoutubePipe,
     ResetPasswordPage
   ],
@@ -132,7 +130,6 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     AddBloodPressurePage,
     StepCounterSettingsPage,
     StepCounterPage,
-    MyActivityPage,
     ResetPasswordPage
   ],
   providers: [
@@ -151,9 +148,7 @@ import {YoutubePipe} from '../pipes/youtube/youtube';
     HealthKit,
     Pedometer,
     SettingsService,
-    YoutubeVideoPlayer,
-   // MedicalIdService
-    
+    YoutubeVideoPlayer
     
     
   ]
